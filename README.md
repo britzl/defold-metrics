@@ -2,7 +2,7 @@
 Calculate and display performance metrics in Defold games.
 
 
-## Installation
+# Installation
 You can use Defold Metrics in your own project by adding this project as a [Defold library dependency](http://www.defold.com/manuals/libraries/). Open your game.project file and in the dependencies field under project add:
 
 	https://github.com/britzl/defold-metrics/archive/master.zip
@@ -10,8 +10,12 @@ You can use Defold Metrics in your own project by adding this project as a [Defo
 Or point to the ZIP file of a [specific release](https://github.com/britzl/defold-metrics/releases).
 
 
+# Usage
+Check the example project in this repository for examples of how to use the provided metrics. Try the example project here: https://britzl.github.io/Metrics/
+
+
 ## FPS
-The FPS counter uses socket.gettime() to get an accurate timestamp and calculates an average FPS based on 60 samples. The FPS counter can be used in several ways:
+The FPS counter uses socket.gettime() to get an accurate timestamp and calculates an average FPS based on a sequence of samples. The FPS counter can be used in several ways:
 
 1. Using fps.go() - Draw FPS counter at game object world position using draw text
 2. Using fps.script - Draw FPS counter at game object world position using draw text
