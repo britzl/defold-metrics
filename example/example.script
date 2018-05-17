@@ -1,0 +1,38 @@
+local fps = require "metrics.fps"
+
+function init(self)
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0.2, 0.4, 1.0, 1.0) })
+	for i=1,1000 do
+		local p = vmath.vector3(math.random(40,620), math.random(40, 1090), 0)
+		local s = vmath.vector3(0.4)
+		local id = factory.create("#factory", p, nil, nil, s)
+
+		local f = vmath.vector3(math.random(-10000, 10000), math.random(-10000, 10000), 0)
+		msg.post(id, "apply_force", {force = f, position = go.get_world_position(id) })
+	end
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	fps.update()
+	fps.draw()
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

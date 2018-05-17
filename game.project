@@ -1,0 +1,34 @@
+[project]
+title = Metrics
+version = 0.2
+
+[script]
+shared_state = 1
+
+[library]
+include_dirs = metrics
+
+[display]
+width = 640
+height = 1136
+
+[bootstrap]
+main_collection = /example/example.collectionc
+
+[physics]
+gravity_y = 0.0
+max_collisions = 2000
+max_contacts = 2000
+
+[ios]
+bundle_identifier = com.britzl.defold.metrics
+
+[android]
+package = com.britzl.defold.metrics
+
+[osx]
+bundle_identifier = com.britzl.defold.metrics
+
+[sprite]
+max_count = 1100
+

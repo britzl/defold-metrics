@@ -1,0 +1,6 @@
+images {
+  image: "/example/assets/images/icon_72.png"
+}
+margin: 0
+extrude_borders: 1
+inner_padding: 0
