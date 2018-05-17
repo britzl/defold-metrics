@@ -1,1 +1,39 @@
-# defold-metrics
+# Defold Metrics
+Calculate and display performance metrics in Defold games.
+
+
+## Installation
+You can use Defold Metrics in your own project by adding this project as a [Defold library dependency](http://www.defold.com/manuals/libraries/). Open your game.project file and in the dependencies field under project add:
+
+	https://github.com/britzl/defold-metrics/archive/master.zip
+
+Or point to the ZIP file of a [specific release](https://github.com/britzl/defold-metrics/releases).
+
+
+## FPS
+The FPS counter uses socket.gettime() to get an accurate timestamp and calculates an average FPS based on 60 samples. The FPS counter can be used in several ways:
+
+1. Using fps.go() - Draw FPS counter at game object world position using draw text
+2. Using fps.script - Draw FPS counter at game object world position using draw text
+3. Using fps.lua - Draw FPS counter at specified position or get current FPS
+
+
+### fps.create(samples)
+Create an instance of the FPS counter
+
+**PARAMETERS**
+* `samples` (number) - Optional sample count. This is the number of samples required before the module will calculate FPS. Defaults to 60.
+
+**RETURNS**
+* `instance` (table) - An FPS counter instance
+
+
+### fps.update()
+Call this once per frame. Once enough samples have been collected it is possible to call fps() to get the current FPS.
+
+
+### fps.fps()
+Get the current FPS, based on collected samples.
+
+**RETURNS**
+* `fps` (number) - The calculated FPS

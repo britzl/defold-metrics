@@ -1,0 +1,10 @@
+local fps = require "metrics.fps"
+
+function init(self)
+	self.instance = fps.create()
+end
+
+function update(self, dt)
+	fps.update()
+	fps.draw(nil, go.get_world_position())
+end

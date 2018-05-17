@@ -3,7 +3,9 @@ local M = {}
 M.POSITION = vmath.vector3(10, 20, 0)
 M.FORMAT = "FPS %.2f"
 
-function M.create()
+function M.create(samples)
+	samples = samples or 60
+	
 	local instance = {}
 
 	local frames = {}
@@ -12,7 +14,7 @@ function M.create()
 
 	function instance.update()
 		table.insert(frames, socket.gettime())
-		if #frames == 61 then
+		if #frames == samples + 1 then
 			table.remove(frames, 1)
 			fps = 1 / ((frames[#frames] - frames[1]) / (#frames - 1))
 		end
