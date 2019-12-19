@@ -11,7 +11,10 @@ Or point to the ZIP file of a [specific release](https://github.com/britzl/defol
 
 
 # Usage
-Check the example project in this repository for examples of how to use the provided metrics. Try the example project here: https://britzl.github.io/Metrics/
+* In your game.project settings, go to Dependencies,and add https://github.com/britzl/defold-metrics/archive/master.zip.
+* In the outline in your scene, right-click and "Add Game Object File" and choose "/metrics/fps.go"
+
+Demo: https://britzl.github.io/Metrics/
 
 
 ## FPS
