@@ -2,6 +2,7 @@ local M = {}
 
 M.POSITION = vmath.vector3(10, 20, 0)
 M.FORMAT = "FPS %.2f"
+M.COLOR = vmath.vector4(0, 0, 1, 1)
 
 function M.create(samples)
 	samples = samples or 60
@@ -24,10 +25,11 @@ function M.create(samples)
 		return fps
 	end
 
-	function instance.draw(format, position)
+	function instance.draw(format, position, color)
 		format = format or M.FORMAT
 		position = position or M.POSITION
-		msg.post("@render:", "draw_text", { text = format:format(fps), position = position } )
+		color = color or M.COLOR
+		msg.post("@render:", "draw_debug_text", { text = format:format(fps), position = position, color = color } )
 	end
 
 	return instance
@@ -47,8 +49,8 @@ function M.fps()
 end
 
 
-function M.draw(format, position)
-	singleton.draw(format, position)
+function M.draw(format, position, color)
+	singleton.draw(format, position, color)
 end
 
 

@@ -44,3 +44,12 @@ Get the current FPS, based on collected samples.
 
 **RETURNS**
 * `fps` (number) - The calculated FPS
+
+
+### fps.draw(format, position, color)
+Draw fps count text using `draw_debug_text`.
+
+**PARAMETERS**
+* `format` (string) - Optional format to draw FPS in. Defaults to "FPS %.2f"
+* `position` (string) - Optional position to draw FPS at. Defaults to v3(10, 20, 0)
+* `color` (string) - Optional color to use when drawing FPS text. Defaults to v4(0,0,1,1)
