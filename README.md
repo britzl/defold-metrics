@@ -25,11 +25,14 @@ The FPS counter uses socket.gettime() to get an accurate timestamp and calculate
 3. Using fps.lua - Draw FPS counter at specified position or get current FPS
 
 
-### fps.create(samples)
+### fps.create(samples, format, position, color)
 Create an instance of the FPS counter
 
 **PARAMETERS**
 * `samples` (number) - Optional sample count. This is the number of samples required before the module will calculate FPS. Defaults to 60.
+* `format` (string) - Optional format to draw FPS in. Defaults to "FPS %.2f"
+* `position` (string) - Optional position to draw FPS at. Defaults to v3(10, 20, 0)
+* `color` (string) - Optional color to use when drawing FPS text. Defaults to v4(0,0,1,1)
 
 **RETURNS**
 * `instance` (table) - An FPS counter instance
@@ -46,10 +49,41 @@ Get the current FPS, based on collected samples.
 * `fps` (number) - The calculated FPS
 
 
-### fps.draw(format, position, color)
+### fps.draw()
 Draw fps count text using `draw_debug_text`.
 
+
+
+## Memory
+The memory counter uses `collectgarbage("count")` to get the amount of Lua memory used. The FPS counter can be used in several ways:
+
+1. Using mem.go() - Draw memory usage at game object world position using draw text
+2. Using mem.script - Draw memory usage at game object world position using draw text
+3. Using mem.lua - Draw memory usage at specified position or get current memory usage
+
+
+### mem.create(format, position, color)
+Create an instance of the memory counter
+
 **PARAMETERS**
-* `format` (string) - Optional format to draw FPS in. Defaults to "FPS %.2f"
-* `position` (string) - Optional position to draw FPS at. Defaults to v3(10, 20, 0)
-* `color` (string) - Optional color to use when drawing FPS text. Defaults to v4(0,0,1,1)
+* `format` (string) - Optional format to draw memory usage in. Defaults to "MEM %dkb"
+* `position` (string) - Optional position to draw memory usage at. Defaults to v3(10, 20, 0)
+* `color` (string) - Optional color to use when drawing memory usage text. Defaults to v4(0,0,1,1)
+
+**RETURNS**
+* `instance` (table) - A memory counter counter instance
+
+
+### mem.update()
+Call this to get a new memory usage reading.
+
+
+### mem.mem()
+Get the current memory usage, in kilobytes.
+
+**RETURNS**
+* `mem` (number) - The Lua memory usage
+
+
+### mem.draw()
+Draw memory usage text using `draw_debug_text`.

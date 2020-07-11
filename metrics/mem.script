@@ -1,11 +1,10 @@
 go.property("show", true)
 go.property("color", vmath.vector4(0, 0, 1, 1))
-go.property("samples", 60)
 
-local fps = require "metrics.fps"
+local mem = require "metrics.mem"
 
 function init(self)
-	self.instance = fps.create(self.samples, nil, go.get_world_position(), self.color)
+	self.instance = mem.create(nil, go.get_world_position(), self.color)
 end
 
 function update(self, dt)
