@@ -16,7 +16,7 @@ function M.create(format, position, color)
 	local message = { text = format:format(mem), position = position, color = color }
 	
 	function instance.update()
-		collectgarbage("count")
+		mem = collectgarbage("count")
 	end
 
 	function instance.mem()
