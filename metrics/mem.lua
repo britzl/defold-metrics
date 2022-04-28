@@ -4,7 +4,7 @@ M.POSITION = vmath.vector3(10, 20, 0)
 M.FORMAT = "MEM %dkb"
 M.COLOR = vmath.vector4(0, 0, 1, 1)
 M.AVARAGE = " - AVG %dkb"
-M.AVARAGE_INTERVAL = 120 -- 2s
+M.AVARAGE_INTERVAL = 120
 
 function M.create(format, position, color, show_avarage, avarage_interval)
 	format = format or M.FORMAT
@@ -18,7 +18,7 @@ function M.create(format, position, color, show_avarage, avarage_interval)
 
 	local frame = 0
 	local avarage_mem = 0
-	local avarage_interval = 120 -- messure an avarage of 2s worth of memory usage
+	local avarage_interval = 120
 	local avarage_mem_sum = 0
 	
 	local message = { text = format:format(mem), position = position, color = color }
@@ -27,7 +27,7 @@ function M.create(format, position, color, show_avarage, avarage_interval)
 	
 		mem = collectgarbage("count")
 
-		-- Caclulate an avarage memory usage during a 120 frame period
+		-- Calculate an avarage memory usage during a 120 frame period
 		if not show_avarage then return end
 		
 		frame = frame + 1
