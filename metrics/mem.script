@@ -1,10 +1,15 @@
+-- mem.script
+
+
 go.property("show", true)
 go.property("color", vmath.vector4(0, 0, 1, 1))
+go.property("show_avarage", false)
+go.property("avarage_interval", 120)
 
 local mem = require "metrics.mem"
 
 function init(self)
-	self.instance = mem.create(nil, go.get_world_position(), self.color)
+	self.instance = mem.create(nil, go.get_world_position(), self.color, self.show_avarage, self.avarage_interval)
 end
 
 function update(self, dt)

@@ -64,13 +64,15 @@ The memory counter uses `collectgarbage("count")` to get the amount of Lua memor
 3. Using mem.lua - Draw memory usage at specified position or get current memory usage
 
 
-### mem.create(format, position, color)
+### mem.create(format, position, color, show_avarage, avarage_interval)
 Create an instance of the memory counter
 
 **PARAMETERS**
 * `format` (string) - Optional format to draw memory usage in. Defaults to "MEM %dkb"
 * `position` (string) - Optional position to draw memory usage at. Defaults to v3(10, 20, 0)
 * `color` (string) - Optional color to use when drawing memory usage text. Defaults to v4(0,0,1,1)
+- `show_avarage` (bool) - Shows an avarage memory usage during a set amount of frames
+- `avarage_interval` (number) - The amount of frames to calculate the avarage memory usage for
 
 **RETURNS**
 * `instance` (table) - A memory counter counter instance
