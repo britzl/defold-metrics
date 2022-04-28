@@ -13,6 +13,8 @@ Or point to the ZIP file of a [specific release](https://github.com/britzl/defol
 # Usage
 * In your game.project settings, go to Dependencies,and add https://github.com/britzl/defold-metrics/archive/master.zip.
 * In the outline in your scene, right-click and "Add Game Object File" and choose "/metrics/fps.go"
+* Change the position on the game object to ex 10, 20, 0 to make it visible.
+* If you also want to use the Lua memory counter, add the "/metrics/mem.go" in the same way, but on position 10, 40, 0.
 
 Demo: https://britzl.github.io/Metrics/
 
@@ -55,7 +57,7 @@ Draw fps count text using `draw_debug_text`.
 
 
 ## Memory
-The memory counter uses `collectgarbage("count")` to get the amount of Lua memory used. The FPS counter can be used in several ways:
+The memory counter uses `collectgarbage("count")` to get the amount of Lua memory used. The memory counter can be used in several ways:
 
 1. Using mem.go() - Draw memory usage at game object world position using draw text
 2. Using mem.script - Draw memory usage at game object world position using draw text
