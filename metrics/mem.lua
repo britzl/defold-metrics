@@ -28,6 +28,8 @@ function M.create(format, position, color, show_avarage, avarage_interval)
 		mem = collectgarbage("count")
 
 		-- Caclulate an avarage memory usage during a 120 frame period
+		if not show_avarage then return end
+		
 		frame = frame + 1
 		if (frame % avarage_interval == 0) then
 			avarage_mem = avarage_mem_sum / avarage_interval
