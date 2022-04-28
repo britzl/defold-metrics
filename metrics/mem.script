@@ -1,6 +1,3 @@
--- mem.script
-
-
 go.property("show", true)
 go.property("color", vmath.vector4(0, 0, 1, 1))
 go.property("show_avarage", false)
